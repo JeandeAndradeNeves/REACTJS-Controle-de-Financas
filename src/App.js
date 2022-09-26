@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 import Header from "./components/Header";
 import Resume from "./components/Resume";
 import Globalstyle from "./styles/global";
