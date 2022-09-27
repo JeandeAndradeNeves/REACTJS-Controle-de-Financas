@@ -6,13 +6,14 @@ import {
   FaRegArrowAltCircleDown,
   FaDollarSign,
 } from "react-icons/fa";
+import { Total } from "../ResumeItem/styles";
 
-const Resume = () => {
+const Resume = ({ income, expense, total }) => {
   return ( 
   <C.Container>
-    <ResumeItem title="Entradas" Icon={FaRegArrowAltCircleUp} value={100}/>
-    <ResumeItem title="Saídas" Icon={FaRegArrowAltCircleDown} value={100}/>
-    <ResumeItem title="Total" Icon={FaDollarSign} value={100}/>
+    <ResumeItem title="Entradas" Icon={FaRegArrowAltCircleUp} value={income}/>
+    <ResumeItem title="Saídas" Icon={FaRegArrowAltCircleDown} value={expense}/>
+    <ResumeItem title="Total" Icon={FaDollarSign} value={total}/>
   </C.Container>
   )
 };
