@@ -16,7 +16,7 @@ const Form = ({handleAdd}) => {
       alert("O valor tem que ser positivo!");
       return;
   }
-
+    //Cria o objeto pra mandar pra handleAdd
   const transaction = {
     id: generateID(),
     desc: desc,

@@ -7,14 +7,14 @@ import Form from "./components/Form";
 const App = () => {
   //Pegando o banco
   const data = localStorage.getItem("transactions");
-  //Confirmando se tem algo dentro do banco e convertendo pra jason
+  //Confirmando se tem algo dentro do banco e convertendo pra json se não tiver retorna uma lista vazia.
   const [transactionsList, setTransactionsList] = useState(
     data ? JSON.parse(data) : []
   );
   const [income, setIncome] = useState(0);
   const [expense, setExpense] = useState(0);
   const [total, setTotal] = useState(0);
-
+  //Toda vez que a lista mudar o useeffect recalcula denovo
   useEffect(() => {
     //Pegando a saida
     const amountExpense = transactionsList
@@ -35,7 +35,7 @@ const App = () => {
       setTotal(`${Number(income) < Number(expense) ? "-" : ""}R$ ${total}`);
   
 }, [transactionsList]);
-
+    //Passando o novo array pro banco
 const handleAdd = (transaction) => {
   const newArrayTransactions = [...transactionsList, transaction];
 
