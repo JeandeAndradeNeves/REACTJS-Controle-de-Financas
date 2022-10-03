@@ -3,6 +3,13 @@ import GridItem from "../GridItem";
 import * as C from "./styles";
 
 const Grid = ({ itens, setItens }) => {
+  //remove o item do banco e retorna um novo array sem o item
+  const onDelete = (ID) => {
+    const newArray = itens.filter((transaction) => transaction.id !== ID);
+    setItens(newArray);
+    localStorage.setItem("transactions", JSON.stringify(newArray));
+  };
+
     return (
       <C.Table>
         <C.Thead>
@@ -15,8 +22,8 @@ const Grid = ({ itens, setItens }) => {
             <C.Th width={10}></C.Th>
           </C.Tr>
         </C.Thead>
+        /*Percorrendo os itens e trazendo o indice.*/
         <C.Tbody>
-            
           {itens?.map((item, index) => (
             <GridItem key={index} item={item} />
           ))}

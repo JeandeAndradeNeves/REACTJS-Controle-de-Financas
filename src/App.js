@@ -32,6 +32,7 @@ const App = () => {
   
       setIncome(`R$ ${income}`);
       setExpense(`R$ ${expense}`);
+    //Se o valor for negativo o sinal - fica antes dos numeros
       setTotal(`${Number(income) < Number(expense) ? "-" : ""}R$ ${total}`);
   
 }, [transactionsList]);
