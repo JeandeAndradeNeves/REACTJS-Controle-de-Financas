@@ -22,10 +22,9 @@ const Grid = ({ itens, setItens }) => {
             <C.Th width={10}></C.Th>
           </C.Tr>
         </C.Thead>
-        /*Percorrendo os itens e trazendo o indice.*/
         <C.Tbody>
           {itens?.map((item, index) => (
-            <GridItem key={index} item={item} />
+            <GridItem key={index} item={item} onDelete={onDelete} />
           ))}
         </C.Tbody>
       </C.Table>
